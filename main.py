@@ -1,7 +1,10 @@
 #!/usr/bin/env python2
 # -*- coding: utf-8 -*-
 """
-This is the example codes for PE-LTR.
+This is the example code for PE-LTR.
+The losses and inputs can be modified.
+The core part is the pareto step.
+The example is an illustration for the zero constraints on the priorities.
 Created on Wed Oct  9 11:27:53 2019
 
 @author: jackielinxiao
@@ -62,7 +65,7 @@ def pareto_step(weights_list, out_gradients_list):
 
 w_a = 0.5
 w_b = 0.5
-for step in xrange(0, 20):
+for step in xrange(0, 50):
     res = sess.run([a_gradients,b_gradients,train],feed_dict={weight_a:w_a,weight_b:w_b})
     #res[0]
     weights = np.mat([w_a, w_b])
